@@ -1,0 +1,11 @@
+<!-- weather/templates/weather/weather.html -->
+<h1>Weather in {{ city }}</h1>
+<p>Temperature: {{ temperature }}°C</p>
+<p>Humidity: {{ humidity }}%</p>
+<p>Description: {{ description }}</p>
+<form method="post" action="{% url 'weather' %}">
+    {% csrf_token %}
+    <label >Enter City:</label>
+    <input type="text" id="city1" name="city" required>
+    <button type="submit">Submit</button>
+</form>
